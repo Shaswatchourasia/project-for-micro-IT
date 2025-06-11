@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentiment Analyzer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+  <div class="bg-gray-800 p-8 rounded-2xl shadow-lg w-full max-w-xl text-center">
+    <h1 class="text-3xl font-bold mb-6 text-teal-400">🔍 Sentiment Analyzer</h1>
+
+    <form method="POST" class="space-y-4">
+      <textarea name="text" rows="4" class="w-full p-4 rounded-lg bg-gray-700 text-white placeholder-gray-400" placeholder="Enter your sentence here..." required>{{ text if text else '' }}</textarea>
+      <button type="submit" class="bg-teal-400 hover:bg-teal-500 px-6 py-3 rounded-lg font-semibold">Analyze</button>
+    </form>
+
+    {% if sentiment %}
+    <div class="mt-6 text-xl">
+      <p><strong class="text-teal-300">Input:</strong> {{ text }}</p>
+      <p><strong class="text-teal-300">Sentiment:</strong> {{ sentiment }}</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
